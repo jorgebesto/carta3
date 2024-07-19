@@ -1,0 +1,90 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+.menu {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu h2 {
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+}
+
+.menu h3 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.menu h3 i {
+    margin-right: 10px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.menu p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.menu span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: #111;
+    color: #777;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+footer p {
+    margin: 0;
+}

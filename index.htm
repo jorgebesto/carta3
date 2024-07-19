@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeli - Menú</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const codigo = urlParams.get('codigo'); // 'codigo' es el parámetro que esperas en la URL
+
+            if (codigo) {
+                // Aquí defines la lógica de redirección según el código
+                switch(codigo) {
+                    case '123':
+                        window.location.href = 'pagina123.html';
+                        break;
+                    case '456':
+                        window.location.href = 'pagina456.html';
+                        break;
+                    // Añade más casos según sea necesario
+                    default:
+                        window.location.href = 'paginaDefault.html';
+                }
+            } else {
+                // Redirección por defecto si no hay código
+                window.location.href = 'paginaDefault.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Restaurante Codeli</h1>
+    </header>
+    <main>
+        <section class="menu">
+            <h2>Menú</h2>
+
+            <h3><i class="fas fa-utensils"></i> Platos Especiales</h3>
+            <ul>
+                <li>
+                    <h4>Pollo Broaster PP</h4>
+                    <p>Delicioso pollo frito al estilo broaster.</p>
+                    <span>$18.000</span>
+                </li>
+                <li>
+                    <h4>Lomo de cerdo BBQ</h4>
+                    <p>Lomo de cerdo a la barbacoa.</p>
+                    <span>$19.000</span>
+                </li>
+                <li>
+                    <h4>Lomo de cerdo asado</h4>
+                    <p>Lomo de cerdo asado al horno.</p>
+                    <span>$19.000</span>
+                </li>
+                <li>
+                    <h4>Carne a la Plancha</h4>
+                    <p>Carne de res a la plancha con guarniciones.</p>
+                    <span>$20.000</span>
+                </li>
+                <li>
+                    <h4>Pechuga asada</h4>
+                    <p>Pechuga de pollo asada con especias.</p>
+                    <span>$22.000</span>
+                </li>
+                <li>
+                    <h4>Pechuga gratinada</h4>
+                    <p>Pechuga de pollo gratinada con queso.</p>
+                    <span>$25.000</span>
+                </li>
+                <li>
+                    <h4>Costillitas BBQ 350gr</h4>
+                    <p>Costillitas de cerdo a la barbacoa.</p>
+                    <span>$27.000</span>
+                </li>
+                <li>
+                    <h4>Churrasquito 300gr</h4>
+                    <p>Churrasquito a la parrilla.</p>
+                    <span>$27.000</span>
+                </li>
+                <li>
+                    <h4>Sobrebarriga al gusto</h4>
+                    <p>Sobrebarriga con tu elección de preparación.</p>
+                    <span>$27.000</span>
+                </li>
+                <li>
+                    <h4>Mojarra frita</h4>
+                    <p>Mojarra frita crujiente.</p>
+                    <span>$29.000</span>
+                </li>
+                <li>
+                    <h4>Bagre Dorado</h4>
+                    <p>Bagre dorado y fresco.</p>
+                    <span>$29.000</span>
+                </li>
+                <li>
+                    <h4>Trucha dorada</h4>
+                    <p>Trucha dorada, ideal para los amantes del pescado.</p>
+                    <span>$28.000</span>
+                </li>
+            </ul>
+            <p><strong>Nota:</strong> Todos los platos especiales vienen acompañados con porción de arroz, papas a la francesa, croqueta de yuca, ensalada, incluye sopa y sobremesa.</p>
+
+            <h3><i class="fas fa-hamburger"></i> Otros</h3>
+            <ul>
+                <li>
+                    <h4>Hamburguesa combo</h4>
+                    <p>Hamburguesa con acompañamientos.</p>
+                    <span>$19.000</span>
+                </li>
+                <li>
+                    <h4>Nuggets de pollo x6</h4>
+                    <p>Nuggets de pollo, seis unidades.</p>
+                    <span>$11.500</span>
+                </li>
+                <li>
+                    <h4>Pinchos de pollo x2</h4>
+                    <p>Pinchos de pollo, dos unidades.</p>
+                    <span>$11.500</span>
+                </li>
+            </ul>
+
+            <h3><i class="fas fa-concierge-bell"></i> Porciones al gusto</h3>
+            <p>Elige tus porciones y bebidas según tu preferencia.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Restaurante Codeli. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
