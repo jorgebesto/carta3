@@ -8,21 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Asegurarse de que body ocupe toda la pantalla sin scroll */
+        body, html {
             width: 100vw;
             height: 100vh;
             margin: 0;
             overflow: hidden;
-            transform: rotate(-90deg); /* Rotación de 90 grados */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Contenedor principal para rotar el contenido */
+        .rotated-container {
+            width: 100vh; /* Ajustado para que cubra toda la altura al rotar */
+            height: 100vw; /* Ajustado para que cubra toda la anchura al rotar */
+            transform: rotate(-90deg);
             transform-origin: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         main {
-            width: 100vh; /* Cambiar ancho y alto */
-            height: 100vw;
+            width: 100%; /* Usa el 100% del contenedor rotado */
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -65,39 +75,41 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Restaurante Codeli</h1>
-    </header>
-    <main>
-        <section class="menu">
-            <h2>Menú</h2>
-            <div class="menu-section active" id="menu-section-1">
-                <h3><i class="fas fa-utensils"></i> Platos Especiales</h3>
-                <ul>
-                    <!-- Menú de platos aquí -->
-                </ul>
-            </div>
-            
-            <div class="menu-section" id="menu-section-2">
-                <h3><i class="fas fa-utensils"></i> Platos Especiales (Continuación)</h3>
-                <ul>
-                    <!-- Segunda parte del menú -->
-                </ul>
-                <h3><i class="fas fa-hamburger"></i> Otros</h3>
-                <ul>
-                    <!-- Otros elementos del menú -->
-                </ul>
-            </div>
-            <p><strong>Nota:</strong> Todos los platos incluyen acompañamientos.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Restaurante Codeli. Todos los derechos reservados.</p>
-        <p>Contacto: 313-845-7774 </p>
-        <p>Síguenos: 
-            <a href="https://www.instagram.com/restaurantecodeli?igsh=YjRtdDB6bXJwcWdo"><i class="fab fa-instagram"></i></a>
-        </p>
-    </footer>
+    <div class="rotated-container">
+        <main>
+            <header>
+                <h1>Restaurante Codeli</h1>
+            </header>
+            <section class="menu">
+                <h2>Menú</h2>
+                <div class="menu-section active" id="menu-section-1">
+                    <h3><i class="fas fa-utensils"></i> Platos Especiales</h3>
+                    <ul>
+                        <!-- Menú de platos aquí -->
+                    </ul>
+                </div>
+                
+                <div class="menu-section" id="menu-section-2">
+                    <h3><i class="fas fa-utensils"></i> Platos Especiales (Continuación)</h3>
+                    <ul>
+                        <!-- Segunda parte del menú -->
+                    </ul>
+                    <h3><i class="fas fa-hamburger"></i> Otros</h3>
+                    <ul>
+                        <!-- Otros elementos del menú -->
+                    </ul>
+                </div>
+                <p><strong>Nota:</strong> Todos los platos incluyen acompañamientos.</p>
+            </section>
+            <footer>
+                <p>&copy; 2024 Restaurante Codeli. Todos los derechos reservados.</p>
+                <p>Contacto: 313-845-7774 </p>
+                <p>Síguenos: 
+                    <a href="https://www.instagram.com/restaurantecodeli?igsh=YjRtdDB6bXJwcWdo"><i class="fab fa-instagram"></i></a>
+                </p>
+            </footer>
+        </main>
+    </div>
 
     <script>
         let currentSection = 1;
