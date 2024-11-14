@@ -2,27 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codeli - Menú</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Configuración para ocupar toda la pantalla y rotar */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100vw;
             height: 100vh;
-            overflow: hidden;
-            transform: rotate(-90deg);
-            transform-origin: center;
-            font-family: 'Open Sans', sans-serif;
             margin: 0;
+            overflow: hidden;
+            transform: rotate(-90deg); /* Rotación de 90 grados */
+            transform-origin: center;
         }
-
-        /* Estilos de main y menú */
+        
         main {
-            width: 100vh;
+            width: 100vh; /* Cambiar ancho y alto */
             height: 100vw;
             display: flex;
             flex-direction: column;
@@ -30,35 +29,38 @@
             justify-content: center;
             overflow: hidden;
         }
+        
+        .menu-section {
+            display: none;
+            width: 100%;
+            padding: 0 2vw;
+            box-sizing: border-box;
+        }
 
-        /* Tamaños de texto ajustados */
+        .menu-section.active {
+            display: block;
+        }
+
         h1, h2, h3 {
-            font-size: 1.5em;
             margin: 0.5em 0;
         }
-        h4 {
-            font-size: 1.2em;
-            margin: 0.3em 0;
-        }
-        p, span, .menu-section ul li {
-            font-size: 0.9em;
-            margin: 0.2em 0;
+
+        ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
         }
 
-        /* Secciones alternantes */
-        .menu-section { 
-            display: none; 
-            width: 90%;
-        }
-        .menu-section.active { 
-            display: block; 
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5em 0;
+            font-size: 1.2vw;
         }
 
-        /* Footer */
         footer {
-            font-size: 0.8em;
             text-align: center;
-            margin-top: 1em;
+            font-size: 1.2vw;
         }
     </style>
 </head>
@@ -69,59 +71,24 @@
     <main>
         <section class="menu">
             <h2>Menú</h2>
-            
-            <!-- Primera sección del menú -->
             <div class="menu-section active" id="menu-section-1">
                 <h3><i class="fas fa-utensils"></i> Platos Especiales</h3>
                 <ul>
-                    <li>
-                        <h4>Pollo Broaster PP</h4>
-                        <p>Delicioso pollo frito al estilo broaster.</p>
-                        <span>$18.000</span>
-                    </li>
-                    <li>
-                        <h4>Lomo de cerdo BBQ</h4>
-                        <p>Lomo de cerdo a la barbacoa.</p>
-                        <span>$19.000</span>
-                    </li>
-                    <li>
-                        <h4>Lomo de cerdo asado</h4>
-                        <p>Lomo de cerdo asado al horno.</p>
-                        <span>$19.000</span>
-                    </li>
-                    <li>
-                        <h4>Carne a la Plancha</h4>
-                        <p>Carne de res a la plancha con guarniciones.</p>
-                        <span>$20.000</span>
-                    </li>
+                    <!-- Menú de platos aquí -->
                 </ul>
             </div>
             
-            <!-- Segunda sección del menú -->
             <div class="menu-section" id="menu-section-2">
+                <h3><i class="fas fa-utensils"></i> Platos Especiales (Continuación)</h3>
+                <ul>
+                    <!-- Segunda parte del menú -->
+                </ul>
                 <h3><i class="fas fa-hamburger"></i> Otros</h3>
                 <ul>
-                    <li>
-                        <h4>Hamburguesa combo</h4>
-                        <p>Hamburguesa con acompañamientos.</p>
-                        <span>$19.000</span>
-                    </li>
-                    <li>
-                        <h4>Nuggets de pollo x6</h4>
-                        <p>Nuggets de pollo, seis unidades.</p>
-                        <span>$11.500</span>
-                    </li>
-                    <li>
-                        <h4>Pinchos de pollo x2</h4>
-                        <p>Pinchos de pollo, dos unidades.</p>
-                        <span>$11.500</span>
-                    </li>
+                    <!-- Otros elementos del menú -->
                 </ul>
-                <h3><i class="fas fa-concierge-bell"></i> Porciones al gusto</h3>
-                <p>Elige tus porciones y bebidas según tu preferencia.</p>
             </div>
-
-            <p><strong>Nota:</strong> Todos los platos especiales vienen acompañados con arroz, papas a la francesa, croqueta de yuca, ensalada, incluye sopa y sobremesa.</p>
+            <p><strong>Nota:</strong> Todos los platos incluyen acompañamientos.</p>
         </section>
     </main>
     <footer>
