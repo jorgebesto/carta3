@@ -62,13 +62,19 @@
         li {
             display: flex;
             justify-content: space-between;
-            margin: 0.5em 0;
-            font-size: 1.2vw;
+            margin: 0.8em 0;
+            font-size: 1.5vw;
+        }
+
+        .category {
+            font-size: 1.7vw;
+            font-weight: bold;
+            margin-bottom: 1em;
         }
 
         footer {
             text-align: center;
-            font-size: 1.2vw;
+            font-size: 1.5vw;
         }
     </style>
 </head>
@@ -82,31 +88,52 @@
                 <h2>Menú</h2>
                 <div class="menu-section active" id="menu-section-1">
                     <h3><i class="fas fa-utensils"></i> Platos Corrientes</h3>
+                    <div class="category">Entradas</div>
                     <ul>
                         <li>
-                            <strong>Entrada:</strong> &nbsp;&nbsp; Sopa de Patacon /  Fruta .
-                        </li>
-                        <li>
-                            <strong>Principio:</strong> &nbsp;&nbsp; Frijol /  Pasta .
-                        </li>
-                        <li>
-                            <strong>Carnes:</strong> &nbsp;&nbsp; Pollo Broaster /  Carne Asada / Cerdo Bisteck.
-                        </li>
-                        <li>
-                            <span>Precio: $12.000</span>
+                            <strong>Sopa de Patacón</strong> / <span>Fruta</span>
                         </li>
                     </ul>
+                    <div class="category">Principios</div>
+                    <ul>
+                        <li>
+                            <strong>Frijol</strong> / <span>Pasta</span>
+                        </li>
+                    </ul>
+                    <div class="category">Carnes</div>
+                    <ul>
+                        <li>
+                            <strong>Pollo Broaster</strong> / <span>Carne Asada</span> / <span>Cerdo Bisteck</span>
+                        </li>
+                    </ul>
+                    <h3>Precio: $12.000</h3>
                 </div>
                 
                 <div class="menu-section" id="menu-section-2">
-                    <h3><i class="fas fa-utensils"></i> Platos Especiales (Continuación)</h3>
+                    <h3><i class="fas fa-utensils"></i> Platos Especiales</h3>
                     <ul>
-                        <!-- Segunda parte del menú -->
+                        <li>Arroz Con Pollo <span>$ 19.000</span></li>
+                        <li>Pollo Broaster PP <span>$ 19.000</span></li>
+                        <li>Lomo de cerdo BBQ <span>$ 19.000</span></li>
+                        <li>Lomo de cerdo asado <span>$ 19.000</span></li>
+                        <li>Carne a la Plancha <span>$ 20.000</span></li>
+                        <li>Pechuga asada <span>$ 23.000</span></li>
+                        <li>Pechuga gratinada <span>$ 25.000</span></li>
+                        <li>Pechuga Ranchera <span>$ 26.000</span></li>
+                        <li>Costillitas BBQ 350gr <span>$ 27.000</span></li>
+                        <li>Churrasquito 300gr <span>$ 27.000</span></li>
+                        <li>Sobrebarriga al gusto <span>$ 27.000</span></li>
+                        <li>Mojarra frita <span>$ 29.000</span></li>
+                        <li>Bagre Dorado <span>$ 29.000</span></li>
+                        <li>Trucha dorada <span>$ 28.000</span></li>
                     </ul>
                     <h3><i class="fas fa-hamburger"></i> Otros</h3>
                     <ul>
-                        <!-- Otros elementos del menú -->
+                        <li>Hamburguesa combo <span>$ 19.500</span></li>
+                        <li>Nuggets de pollo x6 <span>$ 12.500</span></li>
+                        <li>Milanesa de pollo apanado <span>$ 12.500</span></li>
                     </ul>
+                    <h3>Porciones al gusto <span>Bebidas al gusto</span></h3>
                 </div>
                 <p><strong>Nota:</strong> Todos los platos incluyen acompañamientos.</p>
             </section>
