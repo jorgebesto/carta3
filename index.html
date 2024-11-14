@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-height, initial-scale=1.0">
     <title>Codeli - Menú</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Configuración para ocupar toda la pantalla y rotar */
         body {
             display: flex;
             justify-content: center;
@@ -16,8 +16,11 @@
             overflow: hidden;
             transform: rotate(-90deg);
             transform-origin: center;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
         }
-        
+
+        /* Estilos de main y menú */
         main {
             width: 100vh;
             height: 100vw;
@@ -27,13 +30,35 @@
             justify-content: center;
             overflow: hidden;
         }
-        
+
+        /* Tamaños de texto ajustados */
+        h1, h2, h3 {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+        h4 {
+            font-size: 1.2em;
+            margin: 0.3em 0;
+        }
+        p, span, .menu-section ul li {
+            font-size: 0.9em;
+            margin: 0.2em 0;
+        }
+
+        /* Secciones alternantes */
         .menu-section { 
             display: none; 
-            width: 100%;
+            width: 90%;
         }
         .menu-section.active { 
             display: block; 
+        }
+
+        /* Footer */
+        footer {
+            font-size: 0.8em;
+            text-align: center;
+            margin-top: 1em;
         }
     </style>
 </head>
@@ -69,54 +94,11 @@
                         <p>Carne de res a la plancha con guarniciones.</p>
                         <span>$20.000</span>
                     </li>
-                    <li>
-                        <h4>Pechuga asada</h4>
-                        <p>Pechuga de pollo asada con especias.</p>
-                        <span>$22.000</span>
-                    </li>
-                    <li>
-                        <h4>Pechuga gratinada</h4>
-                        <p>Pechuga de pollo gratinada con queso.</p>
-                        <span>$25.000</span>
-                    </li>
-                    <li>
-                        <h4>Costillitas BBQ 350gr</h4>
-                        <p>Costillitas de cerdo a la barbacoa.</p>
-                        <span>$27.000</span>
-                    </li>
                 </ul>
             </div>
             
             <!-- Segunda sección del menú -->
             <div class="menu-section" id="menu-section-2">
-                <h3><i class="fas fa-utensils"></i> Platos Especiales (Continuación)</h3>
-                <ul>
-                    <li>
-                        <h4>Churrasquito 300gr</h4>
-                        <p>Churrasquito a la parrilla.</p>
-                        <span>$27.000</span>
-                    </li>
-                    <li>
-                        <h4>Sobrebarriga al gusto</h4>
-                        <p>Sobrebarriga con tu elección de preparación.</p>
-                        <span>$27.000</span>
-                    </li>
-                    <li>
-                        <h4>Mojarra frita</h4>
-                        <p>Mojarra frita crujiente.</p>
-                        <span>$29.000</span>
-                    </li>
-                    <li>
-                        <h4>Bagre Dorado</h4>
-                        <p>Bagre dorado y fresco.</p>
-                        <span>$29.000</span>
-                    </li>
-                    <li>
-                        <h4>Trucha dorada</h4>
-                        <p>Trucha dorada, ideal para los amantes del pescado.</p>
-                        <span>$28.000</span>
-                    </li>
-                </ul>
                 <h3><i class="fas fa-hamburger"></i> Otros</h3>
                 <ul>
                     <li>
@@ -139,7 +121,7 @@
                 <p>Elige tus porciones y bebidas según tu preferencia.</p>
             </div>
 
-            <p><strong>Nota:</strong> Todos los platos especiales vienen acompañados con porción de arroz, papas a la francesa, croqueta de yuca, ensalada, incluye sopa y sobremesa.</p>
+            <p><strong>Nota:</strong> Todos los platos especiales vienen acompañados con arroz, papas a la francesa, croqueta de yuca, ensalada, incluye sopa y sobremesa.</p>
         </section>
     </main>
     <footer>
