@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Asegurarse de que body ocupe toda la pantalla sin scroll */
         body, html {
             width: 100vw;
             height: 100vh;
@@ -19,10 +18,9 @@
             align-items: center;
         }
 
-        /* Contenedor principal para rotar el contenido */
         .rotated-container {
-            width: 100vh; /* Ajustado para que cubra toda la altura al rotar */
-            height: 100vw; /* Ajustado para que cubra toda la anchura al rotar */
+            width: 100vh;
+            height: 100vw;
             transform: rotate(-90deg);
             transform-origin: center;
             display: flex;
@@ -31,7 +29,7 @@
         }
         
         main {
-            width: 100%; /* Usa el 100% del contenedor rotado */
+            width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -83,9 +81,20 @@
             <section class="menu">
                 <h2>Menú</h2>
                 <div class="menu-section active" id="menu-section-1">
-                    <h3><i class="fas fa-utensils"></i> Platos Especiales</h3>
+                    <h3><i class="fas fa-utensils"></i> Platos Corrientes</h3>
                     <ul>
-                        <!-- Menú de platos aquí -->
+                        <li>
+                            <strong>Entrada:</strong> &nbsp;&nbsp; Ensalada fresca con aderezo de la casa.
+                        </li>
+                        <li>
+                            <strong>Principio:</strong> &nbsp;&nbsp; Sopa de lentejas con vegetales frescos.
+                        </li>
+                        <li>
+                            <strong>Carnes:</strong> &nbsp;&nbsp; Pechuga de pollo a la plancha o carne a la parrilla.
+                        </li>
+                        <li>
+                            <span>Precio: $15.000</span>
+                        </li>
                     </ul>
                 </div>
                 
