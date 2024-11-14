@@ -76,29 +76,9 @@
             text-align: center;
             font-size: 1.5vw;
         }
-
-        .fullscreen-btn {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 20px 30px;
-            background-color: #000;
-            color: white;
-            font-size: 2vw;
-            border: none;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-
-        .fullscreen-btn:focus {
-            outline: none;
-        }
     </style>
 </head>
 <body>
-    <button class="fullscreen-btn" onclick="toggleFullscreen()">Pantalla Completa</button>
-
     <div class="rotated-container">
         <main>
             <header>
@@ -175,8 +155,8 @@
             document.getElementById(`menu-section-${currentSection}`).classList.add('active');
         }, 5000);
 
-        // Función para activar y desactivar pantalla completa
-        function toggleFullscreen() {
+        // Activar pantalla completa al cargar la página
+        window.onload = () => {
             if (!document.fullscreenElement) {
                 if (document.documentElement.requestFullscreen) {
                     document.documentElement.requestFullscreen();
@@ -187,18 +167,8 @@
                 } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
                     document.documentElement.msRequestFullscreen();
                 }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) { // Firefox
-                    document.mozCancelFullScreen();
-                } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) { // IE/Edge
-                    document.msExitFullscreen();
-                }
             }
-        }
+        };
     </script>
 </body>
 </html>
