@@ -3,172 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codeli - Menú</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Tienda Jeans</title>
     <style>
-        body, html {
-            width: 100vw;
-            height: 100vh;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .rotated-container {
-            width: 100vh;
-            height: 100vw;
-            transform: rotate(-90deg);
-            transform-origin: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        main {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .menu-section {
-            display: none;
-            width: 100%;
-            padding: 0 2vw;
-            box-sizing: border-box;
-        }
-
-        .menu-section.active {
-            display: block;
-        }
-
-        h1, h2, h3 {
-            margin: 0.5em 0;
-        }
-
-        ul {
             padding: 0;
-            list-style: none;
-            margin: 0;
+            background-color: #f4f4f4;
         }
-
-        li {
-            display: flex;
-            justify-content: space-between;
-            margin: 0.8em 0;
-            font-size: 1.5vw;
-        }
-
-        .category {
-            font-size: 1.7vw;
-            font-weight: bold;
-            margin-bottom: 1em;
-        }
-
-        footer {
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 1em 0;
             text-align: center;
-            font-size: 1.5vw;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffa500;
+            padding: 0.5em 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+        }
+        .container {
+            padding: 2em;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2em;
+        }
+        .category {
+            text-align: center;
+            padding: 1em;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 45%;
+        }
+        .category img {
+            width: 100%;
+            height: auto;
+        }
+        .cart {
+            margin-top: 2em;
+            text-align: center;
+            background-color: #0056b3;
+            color: white;
+            padding: 1em;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
         }
     </style>
 </head>
 <body>
-    <div class="rotated-container">
-        <main>
-            <header>
-                <h1>Restaurante Codeli</h1>
-            </header>
-            <section class="menu">
-                <h2>Menú</h2>
-                <div class="menu-section active" id="menu-section-1">
-                    <h3><i class="fas fa-utensils"></i> Platos Corrientes</h3>
-                    <div class="category">Entradas</div>
-                    <ul>
-                        <li>
-                            <strong>Sopa de Patacón</strong> / <span>Fruta</span>
-                        </li>
-                    </ul>
-                    <div class="category">Principios</div>
-                    <ul>
-                        <li>
-                            <strong>Frijol</strong> / <span>Pasta</span>
-                        </li>
-                    </ul>
-                    <div class="category">Carnes</div>
-                    <ul>
-                        <li>
-                            <strong>Pollo Broaster</strong> / <span>Carne Asada</span> / <span>Cerdo Bisteck</span>
-                        </li>
-                    </ul>
-                    <h3>Precio: $12.000</h3>
-                </div>
-                
-                <div class="menu-section" id="menu-section-2">
-                    <h3><i class="fas fa-utensils"></i> Platos Especiales</h3>
-                    <ul>
-                        <li>Arroz Con Pollo <span>$ 19.000</span></li>
-                        <li>Pollo Broaster PP <span>$ 19.000</span></li>
-                        <li>Lomo de cerdo BBQ <span>$ 19.000</span></li>
-                        <li>Lomo de cerdo asado <span>$ 19.000</span></li>
-                        <li>Carne a la Plancha <span>$ 20.000</span></li>
-                        <li>Pechuga asada <span>$ 23.000</span></li>
-                        <li>Pechuga gratinada <span>$ 25.000</span></li>
-                        <li>Pechuga Ranchera <span>$ 26.000</span></li>
-                        <li>Costillitas BBQ 350gr <span>$ 27.000</span></li>
-                        <li>Churrasquito 300gr <span>$ 27.000</span></li>
-                        <li>Sobrebarriga al gusto <span>$ 27.000</span></li>
-                        <li>Mojarra frita <span>$ 29.000</span></li>
-                        <li>Bagre Dorado <span>$ 29.000</span></li>
-                        <li>Trucha dorada <span>$ 28.000</span></li>
-                    </ul>
-                    <h3><i class="fas fa-hamburger"></i> Otros</h3>
-                    <ul>
-                        <li>Hamburguesa combo <span>$ 19.500</span></li>
-                        <li>Nuggets de pollo x6 <span>$ 12.500</span></li>
-                        <li>Milanesa de pollo apanado <span>$ 12.500</span></li>
-                    </ul>
-                    <h3>Porciones al gusto <span>Bebidas al gusto</span></h3>
-                </div>
-                <p><strong>Nota:</strong> Todos los platos incluyen acompañamientos.</p>
-            </section>
-            <footer>
-                <p>&copy; 2024 Restaurante Codeli. Todos los derechos reservados.</p>
-                <p>Contacto: 313-845-7774 </p>
-                <p>Síguenos: 
-                    <a href="https://www.instagram.com/restaurantecodeli?igsh=YjRtdDB6bXJwcWdo"><i class="fab fa-instagram"></i></a>
-                </p>
-            </footer>
-        </main>
+    <header>
+        <h1>Tienda Jeans</h1>
+        <p>La mejor selección de jeans para hombres y mujeres</p>
+    </header>
+    <nav>
+        <a href="#hombres">Hombres</a>
+        <a href="#mujeres">Mujeres</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="container">
+        <section id="hombres" class="categories">
+            <div class="category">
+                <h2>Jeans para Hombres</h2>
+                <img src="ruta-a-imagen-hombres.jpg" alt="Jeans Hombres">
+                <p>Descubre nuestra colección para hombres.</p>
+            </div>
+            <div class="category">
+                <h2>Jeans para Mujeres</h2>
+                <img src="ruta-a-imagen-mujeres.jpg" alt="Jeans Mujeres">
+                <p>Encuentra estilos únicos para mujeres.</p>
+            </div>
+        </section>
+        <div class="cart">
+            <h2>🛒 Ir al Carrito</h2>
+        </div>
     </div>
-
-    <script>
-        let currentSection = 1;
-        setInterval(() => {
-            document.getElementById(`menu-section-${currentSection}`).classList.remove('active');
-            currentSection = currentSection === 1 ? 2 : 1;
-            document.getElementById(`menu-section-${currentSection}`).classList.add('active');
-        }, 5000);
-
-        // Activar pantalla completa al cargar la página
-        window.onload = () => {
-            if (!document.fullscreenElement) {
-                if (document.documentElement.requestFullscreen) {
-                    document.documentElement.requestFullscreen();
-                } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-                    document.documentElement.mozRequestFullScreen();
-                } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                    document.documentElement.webkitRequestFullscreen();
-                } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-                    document.documentElement.msRequestFullscreen();
-                }
-            }
-        };
-    </script>
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <p>Teléfono: +57 300 123 4567</p>
+        <p>Email: contacto@tiendajeans.com</p>
+        <p>Dirección: Calle Ficticia 123, Ciudad</p>
+    </footer>
 </body>
 </html>
