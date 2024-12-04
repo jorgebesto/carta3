@@ -114,14 +114,16 @@
         }
     </style>
     <script>
+        let totalAmount = 0;
+
         function calculateTotal() {
             const prices = [50000, 60000]; // Precios: Jeans Hombres y Mujeres
             const quantities = Array.from(document.querySelectorAll('.product input')).map(input => parseInt(input.value));
-            const total = quantities.reduce((sum, quantity, index) => sum + quantity * prices[index], 0);
-            document.getElementById('total-amount').textContent = `Total a pagar: $${total.toLocaleString()}`;
+            totalAmount = quantities.reduce((sum, quantity, index) => sum + quantity * prices[index], 0);
+            document.getElementById('total-amount').textContent = `Total a pagar: $${totalAmount.toLocaleString()}`;
         }
 
-        function showPaymentOptions() {
+        function sendWhatsAppMessage() {
             const name = document.getElementById('name').value.trim();
             const id = document.getElementById('id').value.trim();
             const address = document.getElementById('address').value.trim();
@@ -132,6 +134,22 @@
                 return;
             }
 
+            const message = `
+                Hola, estoy enviando mi comprobante de pago.
+                Datos personales:
+                - Nombre: ${name}
+                - Cédula: ${id}
+                - Dirección: ${address}
+                - Teléfono: ${phone}
+                Total a pagar: $${totalAmount.toLocaleString()}
+            `.trim();
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/573132694579?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function showPaymentOptions() {
             const selectedMethod = document.querySelector('input[name="payment"]:checked');
             if (selectedMethod) {
                 document.querySelector('.qr-code').style.display = 'block';
@@ -198,7 +216,7 @@
         </div>
         <div class="whatsapp-link">
             <p>Envía el comprobante al siguiente enlace:</p>
-            <a href="https://wa.me/573001234567" target="_blank">Enviar Comprobante por WhatsApp</a>
+            <button onclick="sendWhatsAppMessage()">Enviar Comprobante por WhatsApp</button>
         </div>
     </div>
 </body>
