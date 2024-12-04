@@ -35,6 +35,31 @@
             height: auto;
             border-radius: 5px;
         }
+        .total {
+            margin-top: 1em;
+            text-align: right;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .user-data {
+            margin-top: 2em;
+            background-color: white;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .user-data label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        .user-data input {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
         .payment-methods {
             margin-top: 2em;
             background-color: white;
@@ -89,7 +114,24 @@
         }
     </style>
     <script>
+        function calculateTotal() {
+            const prices = [50000, 60000]; // Precios: Jeans Hombres y Mujeres
+            const quantities = Array.from(document.querySelectorAll('.product input')).map(input => parseInt(input.value));
+            const total = quantities.reduce((sum, quantity, index) => sum + quantity * prices[index], 0);
+            document.getElementById('total-amount').textContent = `Total a pagar: $${total.toLocaleString()}`;
+        }
+
         function showPaymentOptions() {
+            const name = document.getElementById('name').value.trim();
+            const id = document.getElementById('id').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !id || !address || !phone) {
+                alert("Por favor, completa todos los datos personales.");
+                return;
+            }
+
             const selectedMethod = document.querySelector('input[name="payment"]:checked');
             if (selectedMethod) {
                 document.querySelector('.qr-code').style.display = 'block';
@@ -100,7 +142,7 @@
         }
     </script>
 </head>
-<body>
+<body onload="calculateTotal()">
     <header>
         <h1>Carrito de Compras</h1>
     </header>
@@ -111,7 +153,7 @@
                 <p>Precio: $50.000</p>
             </div>
             <img src="jeans men.webp" alt="Jeans Hombres">
-            <input type="number" min="1" value="1">
+            <input type="number" min="0" value="1" onchange="calculateTotal()">
         </div>
         <div class="product">
             <div>
@@ -119,8 +161,22 @@
                 <p>Precio: $60.000</p>
             </div>
             <img src="jeans women.webp" alt="Jeans Mujeres">
-            <input type="number" min="1" value="1">
+            <input type="number" min="0" value="1" onchange="calculateTotal()">
         </div>
+        <div class="total" id="total-amount">Total a pagar: $0</div>
+
+        <div class="user-data">
+            <h3>Ingresa tus datos personales:</h3>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Ingresa tu nombre">
+            <label for="id">Cédula:</label>
+            <input type="text" id="id" placeholder="Ingresa tu cédula">
+            <label for="address">Dirección:</label>
+            <input type="text" id="address" placeholder="Ingresa tu dirección">
+            <label for="phone">Teléfono:</label>
+            <input type="text" id="phone" placeholder="Ingresa tu teléfono">
+        </div>
+
         <div class="payment-methods">
             <h3>Selecciona tu método de pago:</h3>
             <label>
@@ -138,7 +194,6 @@
         </div>
         <div class="qr-code">
             <h3>Escanea el código QR para realizar el pago:</h3>
-            <!-- Aquí debes agregar la imagen del código QR correspondiente -->
             <img src="qr-placeholder.png" alt="Código QR">
         </div>
         <div class="whatsapp-link">
