@@ -35,6 +35,24 @@
             height: auto;
             border-radius: 5px;
         }
+        .payment-methods {
+            margin-top: 2em;
+            background-color: white;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .payment-methods h3 {
+            margin: 0 0 1em 0;
+        }
+        .payment-methods label {
+            display: block;
+            margin-bottom: 1em;
+            cursor: pointer;
+        }
+        .payment-methods input[type="radio"] {
+            margin-right: 0.5em;
+        }
         .actions {
             text-align: center;
             margin-top: 2em;
@@ -51,7 +69,36 @@
         .actions button:hover {
             background-color: #003d80;
         }
+        .qr-code {
+            display: none;
+            text-align: center;
+            margin-top: 2em;
+        }
+        .qr-code img {
+            width: 150px;
+            height: auto;
+        }
+        .whatsapp-link {
+            text-align: center;
+            margin-top: 1em;
+        }
+        .whatsapp-link a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
+    <script>
+        function showPaymentOptions() {
+            const selectedMethod = document.querySelector('input[name="payment"]:checked');
+            if (selectedMethod) {
+                document.querySelector('.qr-code').style.display = 'block';
+                document.querySelector('.whatsapp-link').style.display = 'block';
+            } else {
+                alert("Por favor, selecciona un método de pago.");
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -74,8 +121,29 @@
             <img src="jeans women.webp" alt="Jeans Mujeres">
             <input type="number" min="1" value="1">
         </div>
+        <div class="payment-methods">
+            <h3>Selecciona tu método de pago:</h3>
+            <label>
+                <input type="radio" name="payment" value="daviplata"> Daviplata
+            </label>
+            <label>
+                <input type="radio" name="payment" value="nequi"> Nequi
+            </label>
+            <label>
+                <input type="radio" name="payment" value="efectivo"> Efectivo
+            </label>
+        </div>
         <div class="actions">
-            <button onclick="alert('¡Gracias por tu compra!')">Confirmar Compra</button>
+            <button onclick="showPaymentOptions()">Confirmar Pago</button>
+        </div>
+        <div class="qr-code">
+            <h3>Escanea el código QR para realizar el pago:</h3>
+            <!-- Aquí debes agregar la imagen del código QR correspondiente -->
+            <img src="qr-placeholder.png" alt="Código QR">
+        </div>
+        <div class="whatsapp-link">
+            <p>Envía el comprobante al siguiente enlace:</p>
+            <a href="https://wa.me/573001234567" target="_blank">Enviar Comprobante por WhatsApp</a>
         </div>
     </div>
 </body>
