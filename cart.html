@@ -22,8 +22,7 @@
         }
         .product {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
             margin-bottom: 1em;
             padding: 1em;
             background-color: white;
@@ -31,8 +30,20 @@
             border-radius: 5px;
         }
         .product img {
-            width: 80px;
+            width: 120px;
             height: auto;
+            border-radius: 5px;
+            margin: 0 auto 1em;
+        }
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product select, .product input {
+            margin: 0.5em 0;
+            padding: 0.5em;
+            border: 1px solid #ddd;
             border-radius: 5px;
         }
         .total {
@@ -76,15 +87,6 @@
         .actions button:hover {
             background-color: #003d80;
         }
-        .whatsapp-link {
-            text-align: center;
-            margin-top: 1em;
-        }
-        .whatsapp-link a {
-            color: #25D366;
-            text-decoration: none;
-            font-weight: bold;
-        }
     </style>
     <script>
         let totalAmount = 0;
@@ -108,13 +110,21 @@
             }
 
             const products = [
-                { name: "Jeans para Hombres", quantity: document.querySelectorAll('.product input')[0].value },
-                { name: "Jeans para Mujeres", quantity: document.querySelectorAll('.product input')[1].value }
+                {
+                    name: "Jeans para Hombres",
+                    quantity: document.querySelectorAll('.product input')[0].value,
+                    size: document.querySelectorAll('.product select')[0].value
+                },
+                {
+                    name: "Jeans para Mujeres",
+                    quantity: document.querySelectorAll('.product input')[1].value,
+                    size: document.querySelectorAll('.product select')[1].value
+                }
             ];
 
             const orderedProducts = products
                 .filter(product => product.quantity > 0)
-                .map(product => `${product.name}: ${product.quantity} unidades`)
+                .map(product => `${product.name}: ${product.quantity} unidades (Talla: ${product.size})`)
                 .join("\n");
 
             const message = `
@@ -141,20 +151,32 @@
     </header>
     <div class="container">
         <div class="product">
-            <div>
-                <h2>Jeans para Hombres</h2>
-                <p>Precio: $50.000</p>
-            </div>
+            <h2>Jeans para Hombres</h2>
             <img src="jeans men.webp" alt="Jeans Hombres">
+            <label for="quantity-men">Cantidad:</label>
             <input type="number" min="0" value="1" onchange="calculateTotal()">
+            <label for="size-men">Talla:</label>
+            <select id="size-men">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
         </div>
         <div class="product">
-            <div>
-                <h2>Jeans para Mujeres</h2>
-                <p>Precio: $60.000</p>
-            </div>
+            <h2>Jeans para Mujeres</h2>
             <img src="jeans women.webp" alt="Jeans Mujeres">
+            <label for="quantity-women">Cantidad:</label>
             <input type="number" min="0" value="1" onchange="calculateTotal()">
+            <label for="size-women">Talla:</label>
+            <select id="size-women">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
         </div>
         <div class="total" id="total-amount">Total a pagar: $0</div>
 
