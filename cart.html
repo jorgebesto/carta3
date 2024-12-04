@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .container {
+            padding: 2em;
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+            padding: 1em;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .product img {
+            width: 80px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .actions {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .actions button {
+            padding: 0.5em 2em;
+            font-size: 1em;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .actions button:hover {
+            background-color: #003d80;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+    </header>
+    <div class="container">
+        <div class="product">
+            <div>
+                <h2>Jeans para Hombres</h2>
+                <p>Precio: $50.000</p>
+            </div>
+            <img src="jeans men.webp" alt="Jeans Hombres">
+            <input type="number" min="1" value="1">
+        </div>
+        <div class="product">
+            <div>
+                <h2>Jeans para Mujeres</h2>
+                <p>Precio: $60.000</p>
+            </div>
+            <img src="jeans women.webp" alt="Jeans Mujeres">
+            <input type="number" min="1" value="1">
+        </div>
+        <div class="actions">
+            <button onclick="alert('¡Gracias por tu compra!')">Confirmar Compra</button>
+        </div>
+    </div>
+</body>
+</html>
